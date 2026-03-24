@@ -1,26 +1,250 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* ===== PRIMITIVES ===== */
+
+  /* Brand */
+  --brand-50: #FAFAF8;
+  --brand-100: #F6F4F1;
+  --brand-200: #F1EFE9;
+  --brand-300: #EDE9E2;
+  --brand-400: #E8E4DB;
+  --brand-500: #BAB6AF;
+  --brand-600: #8B8983;
+  --brand-700: #5D5B58;
+  --brand-800: #2E2E2C;
+  --brand-900: #1F2021;
+  --brand-950: #0C0D0D;
+
+  /* Success */
+  --success-50: #E7EAE1;
+  --success-100: #C4CBB5;
+  --success-200: #C4CBB5;
+  --success-300: #A6B091;
+  --success-400: #89966C;
+  --success-500: #6B7C47;
+  --success-600: #566339;
+  --success-700: #404A2B;
+  --success-800: #2B321C;
+  --success-900: #15190E;
+  --success-950: #080A05;
+
+  /* Error */
+  --error-50: #F8EFEC;
+  --error-100: #F1DED8;
+  --error-200: #E3BEB0;
+  --error-300: #D49D89;
+  --error-400: #C67D61;
+  --error-500: #B85C3A;
+  --error-600: #934A2E;
+  --error-700: #6E3723;
+  --error-800: #4A2517;
+  --error-900: #25120C;
+  --error-950: #130906;
+
+  /* Base */
+  --base-white: #FFFFFF;
+  --base-black: #000000;
+  --base-transparent: transparent;
+
+  /* ===== SEMANTIC - BACKGROUND ===== */
+  --bg-primary: #F6F4F1;
+  --bg-secondary: #F1EFE9;
+  --bg-tertiary: #EDE9E2;
+  --bg-quaternary: #FFFFFF;
+  --bg-brand-primary: #1F2021;
+  --bg-brand-secondary: #2E2E2C;
+  --bg-success-primary: #6B7C47;
+  --bg-success-secondary: #C4CBB5;
+  --bg-success-tertiary: #E7EAE1;
+  --bg-error-primary: #B85C3A;
+  --bg-error-secondary: #D49D89;
+  --bg-error-tertiary: #F8EFEC;
+
+  /* ===== SEMANTIC - FOREGROUND ===== */
+  --fg-primary: #1F2021;
+  --fg-secondary: #2E2E2C;
+  --fg-tertiary: #5D5B58;
+  --fg-quaternary: #BAB6AF;
+  --fg-white: #F6F4F1;
+  --fg-black: #000000;
+
+  /* ===== SEMANTIC - TEXT ===== */
+  --text-primary: #1F2021;
+  --text-secondary: #2E2E2C;
+  --text-tertiary: #5D5B58;
+  --text-quaternary: #BAB6AF;
+  --text-white: #F6F4F1;
+  --text-black: #000000;
+  --text-success-primary: #FFFFFF;
+  --text-success-secondary: #FFFFFF;
+  --text-success-tertiary: #6B7C47;
+  --text-error-primary: #FFFFFF;
+  --text-error-secondary: #FFFFFF;
+  --text-error-tertiary: #B85C3A;
+
+  /* ===== SEMANTIC - ICON ===== */
+  --icon-primary: #1F2021;
+  --icon-secondary: #2E2E2C;
+  --icon-tertiary: #5D5B58;
+  --icon-quaternary: #BAB6AF;
+  --icon-white: #F6F4F1;
+  --icon-black: #000000;
+
+  /* ===== SEMANTIC - BORDER ===== */
+  --border-primary: #1F2021;
+  --border-secondary: #5D5B58;
+  --border-tertiary: #BAB6AF;
+  --border-quaternary: #E8E4DB;
+
+  /* ===== RADIUS ===== */
+  --radius-none: 0px;
+  --radius-xxs: 2px;
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  --radius-2xl: 16px;
+  --radius-3xl: 20px;
+  --radius-4xl: 24px;
+  --radius-full: 999px;
+
+  /* ===== SPACING ===== */
+  --spacing-0: 0px;
+  --spacing-0-5: 2px;
+  --spacing-1: 4px;
+  --spacing-1-5: 6px;
+  --spacing-2: 8px;
+  --spacing-2-5: 10px;
+  --spacing-3: 12px;
+  --spacing-3-5: 14px;
+  --spacing-4: 16px;
+  --spacing-5: 20px;
+  --spacing-6: 24px;
+  --spacing-7: 28px;
+  --spacing-8: 32px;
+  --spacing-9: 36px;
+  --spacing-10: 40px;
+  --spacing-11: 44px;
+  --spacing-12: 48px;
+  --spacing-14: 56px;
+  --spacing-16: 64px;
+  --spacing-20: 80px;
+  --spacing-24: 96px;
+  --spacing-32: 128px;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-sentient);
+  --font-mono: var(--font-jetbrains-mono);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* Doris semantic background colors */
+  --color-bg-primary: var(--bg-primary);
+  --color-bg-secondary: var(--bg-secondary);
+  --color-bg-tertiary: var(--bg-tertiary);
+  --color-bg-quaternary: var(--bg-quaternary);
+  --color-bg-brand-primary: var(--bg-brand-primary);
+  --color-bg-brand-secondary: var(--bg-brand-secondary);
+  --color-bg-success-primary: var(--bg-success-primary);
+  --color-bg-success-secondary: var(--bg-success-secondary);
+  --color-bg-success-tertiary: var(--bg-success-tertiary);
+  --color-bg-error-primary: var(--bg-error-primary);
+  --color-bg-error-secondary: var(--bg-error-secondary);
+  --color-bg-error-tertiary: var(--bg-error-tertiary);
+
+  /* Doris semantic text colors */
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-tertiary: var(--text-tertiary);
+  --color-text-quaternary: var(--text-quaternary);
+  --color-text-white: var(--text-white);
+  --color-text-black: var(--text-black);
+  --color-text-success-primary: var(--text-success-primary);
+  --color-text-success-secondary: var(--text-success-secondary);
+  --color-text-success-tertiary: var(--text-success-tertiary);
+  --color-text-error-primary: var(--text-error-primary);
+  --color-text-error-secondary: var(--text-error-secondary);
+  --color-text-error-tertiary: var(--text-error-tertiary);
+
+  /* Doris semantic icon colors */
+  --color-icon-primary: var(--icon-primary);
+  --color-icon-secondary: var(--icon-secondary);
+  --color-icon-tertiary: var(--icon-tertiary);
+  --color-icon-quaternary: var(--icon-quaternary);
+  --color-icon-white: var(--icon-white);
+  --color-icon-black: var(--icon-black);
+
+  /* Doris semantic border colors */
+  --color-border-primary: var(--border-primary);
+  --color-border-secondary: var(--border-secondary);
+  --color-border-tertiary: var(--border-tertiary);
+  --color-border-quaternary: var(--border-quaternary);
+
+  /* Doris semantic foreground colors */
+  --color-fg-primary: var(--fg-primary);
+  --color-fg-secondary: var(--fg-secondary);
+  --color-fg-tertiary: var(--fg-tertiary);
+  --color-fg-quaternary: var(--fg-quaternary);
+  --color-fg-white: var(--fg-white);
+  --color-fg-black: var(--fg-black);
+
+  /* Doris primitive brand scale */
+  --color-brand-50: var(--brand-50);
+  --color-brand-100: var(--brand-100);
+  --color-brand-200: var(--brand-200);
+  --color-brand-300: var(--brand-300);
+  --color-brand-400: var(--brand-400);
+  --color-brand-500: var(--brand-500);
+  --color-brand-600: var(--brand-600);
+  --color-brand-700: var(--brand-700);
+  --color-brand-800: var(--brand-800);
+  --color-brand-900: var(--brand-900);
+  --color-brand-950: var(--brand-950);
+
+  /* Doris primitive success scale */
+  --color-success-50: var(--success-50);
+  --color-success-100: var(--success-100);
+  --color-success-200: var(--success-200);
+  --color-success-300: var(--success-300);
+  --color-success-400: var(--success-400);
+  --color-success-500: var(--success-500);
+  --color-success-600: var(--success-600);
+  --color-success-700: var(--success-700);
+  --color-success-800: var(--success-800);
+  --color-success-900: var(--success-900);
+  --color-success-950: var(--success-950);
+
+  /* Doris primitive error scale */
+  --color-error-50: var(--error-50);
+  --color-error-100: var(--error-100);
+  --color-error-200: var(--error-200);
+  --color-error-300: var(--error-300);
+  --color-error-400: var(--error-400);
+  --color-error-500: var(--error-500);
+  --color-error-600: var(--error-600);
+  --color-error-700: var(--error-700);
+  --color-error-800: var(--error-800);
+  --color-error-900: var(--error-900);
+  --color-error-950: var(--error-950);
+
+  /* Doris radius */
+  --radius-none: 0px;
+  --radius-xxs: 2px;
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  --radius-2xl: 16px;
+  --radius-3xl: 20px;
+  --radius-4xl: 24px;
+  --radius-full: 999px;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
 }
