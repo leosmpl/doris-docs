@@ -78,31 +78,19 @@ function WeightRow({
   );
 }
 
+import { PageHeader } from "@/components/docs/page-header";
+
 export default function TypographyPage() {
   return (
     <div className="-mx-8 -mt-12">
-      {/* Hero Banner */}
-      <div className="flex items-center bg-bg-brand-primary p-10">
-        <div className="flex flex-1 flex-col gap-6">
-          <span className="font-mono text-xs font-medium uppercase tracking-widest text-fg-quaternary">
-            Doris
-          </span>
-          <hr className="border-t border-fg-tertiary" />
-          <p
-            className="font-serif text-text-white"
-            style={{
-              fontSize: "48px",
-              lineHeight: "48px",
-              letterSpacing: "-0.24px",
-            }}
-          >
-            Typography
-          </p>
-        </div>
-      </div>
+      <PageHeader
+        section="Theming"
+        title="Typography"
+        body="Typography tokens and styles for visually appealing designs, ensuring consistency across platforms with defined font sizes and weights."
+      />
 
       {/* Main Content */}
-      <div className="flex flex-col gap-14 p-10">
+      <div className="flex flex-col gap-14 px-8 py-10">
         {/* Headings Section */}
         <section className="flex flex-col gap-7">
           <p className="text-xs font-medium text-fg-quaternary">Headings</p>
@@ -162,12 +150,6 @@ export default function TypographyPage() {
         </section>
       </div>
 
-      {/* Footer */}
-      <div className="flex items-center bg-bg-secondary p-10">
-        <span className="font-mono text-xs font-medium uppercase tracking-widest text-fg-quaternary">
-          Doris
-        </span>
-      </div>
     </div>
   );
 }
