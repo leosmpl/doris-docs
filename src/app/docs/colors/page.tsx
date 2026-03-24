@@ -1,3 +1,4 @@
+import { PageHeader } from "@/components/docs/page-header";
 import { ColorSwatch, ColorRow } from "@/components/docs/color-swatch";
 
 const primitives = {
@@ -154,16 +155,11 @@ const semanticGroups = [
 export default function ColorsPage() {
   return (
     <div className="space-y-12">
-      <div className="space-y-4">
-        <h1 className="font-serif text-4xl font-bold tracking-tight text-text-primary">
-          Colors
-        </h1>
-        <p className="text-lg text-text-tertiary">
-          Primitive color scales and semantic token mappings.
-        </p>
-      </div>
-
-      <hr className="border-border-quaternary" />
+      <PageHeader
+        section="Theming"
+        title="Colors"
+        body="Primitive color scales and semantic token mappings."
+      />
 
       {/* Primitives */}
       <section className="space-y-8">

@@ -12,19 +12,16 @@ const radiusScale = [
   { name: "radius-full", value: "999px" },
 ];
 
+import { PageHeader } from "@/components/docs/page-header";
+
 export default function RadiusPage() {
   return (
     <div className="space-y-8">
-      <div className="space-y-4">
-        <h1 className="font-serif text-4xl font-bold tracking-tight text-text-primary">
-          Radius
-        </h1>
-        <p className="text-lg text-text-tertiary">
-          Border radius tokens for consistent corner rounding.
-        </p>
-      </div>
-
-      <hr className="border-border-quaternary" />
+      <PageHeader
+        section="Layout"
+        title="Radius"
+        body="Border radius tokens for consistent corner rounding."
+      />
 
       <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4">
         {radiusScale.map((item) => (

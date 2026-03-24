@@ -1,3 +1,5 @@
+import { PageHeader } from "@/components/docs/page-header";
+
 export default function DesignPrinciplesPage() {
   const principles = [
     {
@@ -29,16 +31,11 @@ export default function DesignPrinciplesPage() {
 
   return (
     <div className="space-y-8">
-      <div className="space-y-4">
-        <h1 className="font-serif text-4xl font-bold tracking-tight text-text-primary">
-          Design Principles
-        </h1>
-        <p className="text-lg text-text-tertiary">
-          The guiding values behind every design decision in Doris.
-        </p>
-      </div>
-
-      <hr className="border-border-quaternary" />
+      <PageHeader
+        section="Getting Started"
+        title="Design Principles"
+        body="The guiding values behind every design decision in Doris."
+      />
 
       <div className="space-y-8">
         {principles.map((principle, i) => (

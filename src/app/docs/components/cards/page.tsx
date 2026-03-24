@@ -1,3 +1,4 @@
+import { PageHeader } from "@/components/docs/page-header";
 import {
   DorisCard,
   DorisCardHeader,
@@ -10,16 +11,11 @@ import { StatusBadge } from "@/components/ui/status-badge";
 export default function CardsPage() {
   return (
     <div className="space-y-12">
-      <div className="space-y-4">
-        <h1 className="font-serif text-4xl font-bold tracking-tight text-text-primary">
-          Cards
-        </h1>
-        <p className="text-lg text-text-tertiary">
-          Container component for grouping related content.
-        </p>
-      </div>
-
-      <hr className="border-border-quaternary" />
+      <PageHeader
+        section="Components"
+        title="Cards"
+        body="Container component for grouping related content."
+      />
 
       {/* Basic */}
       <section className="space-y-6">

@@ -1,17 +1,13 @@
+import { PageHeader } from "@/components/docs/page-header";
+
 export default function IntroductionPage() {
   return (
     <div className="space-y-8">
-      <div className="space-y-4">
-        <h1 className="font-serif text-4xl font-bold tracking-tight text-text-primary">
-          Introduction
-        </h1>
-        <p className="text-lg text-text-tertiary">
-          The design system behind Doris — a visual-first platform for options
-          strategy design.
-        </p>
-      </div>
-
-      <hr className="border-border-quaternary" />
+      <PageHeader
+        section="Getting Started"
+        title="Introduction"
+        body="The design system behind Doris — a visual-first platform for options strategy design."
+      />
 
       <section className="space-y-4">
         <h2 className="font-serif text-2xl font-semibold text-text-primary">

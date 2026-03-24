@@ -1,18 +1,14 @@
+import { PageHeader } from "@/components/docs/page-header";
 import { DorisButton } from "@/components/ui/doris-button";
 
 export default function ButtonsPage() {
   return (
     <div className="space-y-12">
-      <div className="space-y-4">
-        <h1 className="font-serif text-4xl font-bold tracking-tight text-text-primary">
-          Buttons
-        </h1>
-        <p className="text-lg text-text-tertiary">
-          Primary action triggers with variant and size options.
-        </p>
-      </div>
-
-      <hr className="border-border-quaternary" />
+      <PageHeader
+        section="Components"
+        title="Buttons"
+        body="Primary action triggers with variant and size options."
+      />
 
       {/* Variants */}
       <section className="space-y-6">

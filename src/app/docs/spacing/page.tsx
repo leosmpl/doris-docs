@@ -23,19 +23,16 @@ const spacingScale = [
   { name: "32", value: "128px" },
 ];
 
+import { PageHeader } from "@/components/docs/page-header";
+
 export default function SpacingPage() {
   return (
     <div className="space-y-8">
-      <div className="space-y-4">
-        <h1 className="font-serif text-4xl font-bold tracking-tight text-text-primary">
-          Spacing
-        </h1>
-        <p className="text-lg text-text-tertiary">
-          A consistent spacing scale used for padding, margins, and gaps.
-        </p>
-      </div>
-
-      <hr className="border-border-quaternary" />
+      <PageHeader
+        section="Layout"
+        title="Spacing"
+        body="A consistent spacing scale used for padding, margins, and gaps."
+      />
 
       <div className="space-y-2">
         {spacingScale.map((item) => (
