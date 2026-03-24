@@ -1,135 +1,173 @@
-const fontSizes = [
-  { name: "Size-xs", size: "12px", lineHeight: "16px" },
-  { name: "Size-sm", size: "14px", lineHeight: "20px" },
-  { name: "Size-base", size: "16px", lineHeight: "24px" },
-  { name: "Size-lg", size: "18px", lineHeight: "28px" },
-  { name: "Size-xl", size: "20px", lineHeight: "28px" },
-  { name: "Size-2xl", size: "24px", lineHeight: "32px" },
-  { name: "Size-3xl", size: "30px", lineHeight: "36px" },
-  { name: "Size-4xl", size: "36px", lineHeight: "40px" },
-  { name: "Size-5xl", size: "48px", lineHeight: "48px" },
-  { name: "Size-6xl", size: "60px", lineHeight: "60px" },
-  { name: "Size-7xl", size: "72px", lineHeight: "72px" },
-  { name: "Size-8xl", size: "96px", lineHeight: "1" },
-  { name: "Size-9xl", size: "128px", lineHeight: "1" },
+const headings = [
+  { level: "H1", size: "72px", lineHeight: "72px", tracking: "-0.36px" },
+  { level: "H2", size: "60px", lineHeight: "60px", tracking: "-0.3px" },
+  { level: "H3", size: "48px", lineHeight: "48px", tracking: "-0.24px" },
+  { level: "H4", size: "36px", lineHeight: "40px", tracking: "-0.18px" },
+  { level: "H5", size: "30px", lineHeight: "36px", tracking: "-0.15px" },
+  { level: "H6", size: "24px", lineHeight: "32px", tracking: "-0.12px" },
 ];
 
-const fontWeights = [
-  { name: "Light", value: "300" },
-  { name: "Regular", value: "400" },
-  { name: "Medium", value: "500" },
-  { name: "Bold", value: "700" },
-  { name: "Italic", value: "400", style: "italic" as const },
+const bodySizes = [
+  { name: "Body xl", size: "20px", lineHeight: "28px" },
+  { name: "Body lg", size: "18px", lineHeight: "28px" },
+  { name: "Body base", size: "16px", lineHeight: "24px" },
+  { name: "Body sm", size: "14px", lineHeight: "20px" },
+  { name: "Body xs", size: "12px", lineHeight: "16px" },
 ];
+
+const captionSizes = [
+  { name: "Captions xl", size: "20px", lineHeight: "28px" },
+  { name: "Captions lg", size: "18px", lineHeight: "28px" },
+  { name: "Captions Base", size: "16px", lineHeight: "24px" },
+  { name: "Captions sm", size: "14px", lineHeight: "20px" },
+  { name: "Captions xs", size: "12px", lineHeight: "16px" },
+];
+
+function WeightRow({
+  name,
+  size,
+  lineHeight,
+  fontClass,
+}: {
+  name: string;
+  size: string;
+  lineHeight: string;
+  fontClass: string;
+}) {
+  return (
+    <div className="flex items-center justify-between border-b border-border-quaternary pb-6">
+      <div className="flex flex-col gap-2">
+        <p
+          className={`${fontClass} text-fg-primary`}
+          style={{ fontSize: size, lineHeight, fontWeight: 700 }}
+        >
+          {name}
+        </p>
+        <p className="font-mono text-[11px] leading-[16.5px] text-fg-quaternary">
+          Bold
+        </p>
+      </div>
+      <div className="flex flex-col gap-2">
+        <p
+          className={`${fontClass} text-fg-primary`}
+          style={{ fontSize: size, lineHeight, fontWeight: 500 }}
+        >
+          {name}
+        </p>
+        <p className="font-mono text-[11px] leading-[16.5px] text-fg-quaternary">
+          Medium
+        </p>
+      </div>
+      <div className="flex flex-col gap-2">
+        <p
+          className={`${fontClass} text-fg-primary`}
+          style={{ fontSize: size, lineHeight, fontWeight: 400 }}
+        >
+          {name}
+        </p>
+        <p className="font-mono text-[11px] leading-[16.5px] text-fg-quaternary">
+          Regular
+        </p>
+      </div>
+      <div>
+        <p className="font-mono text-xs leading-4 text-fg-quaternary">
+          {size} · {lineHeight}
+        </p>
+      </div>
+    </div>
+  );
+}
 
 export default function TypographyPage() {
   return (
-    <div className="space-y-12">
-      <div className="space-y-4">
-        <h1 className="font-serif text-4xl font-bold tracking-tight text-text-primary">
-          Typography
-        </h1>
-        <p className="text-lg text-text-tertiary">
-          Font families, weights, and the type scale.
-        </p>
+    <div className="-mx-8 -mt-12">
+      {/* Hero Banner */}
+      <div className="flex items-center bg-bg-brand-primary p-10">
+        <div className="flex flex-1 flex-col gap-6">
+          <span className="font-mono text-xs font-medium uppercase tracking-widest text-fg-quaternary">
+            Doris
+          </span>
+          <hr className="border-t border-fg-tertiary" />
+          <p
+            className="font-serif text-text-white"
+            style={{
+              fontSize: "48px",
+              lineHeight: "48px",
+              letterSpacing: "-0.24px",
+            }}
+          >
+            Typography
+          </p>
+        </div>
       </div>
 
-      <hr className="border-border-quaternary" />
-
-      {/* Font Families */}
-      <section className="space-y-6">
-        <h2 className="font-serif text-2xl font-semibold text-text-primary">
-          Font Families
-        </h2>
-
-        <div className="space-y-6">
-          <div className="rounded-xl border border-border-quaternary bg-bg-quaternary p-6">
-            <p className="mb-1 font-mono text-xs text-text-quaternary">
-              font-serif · Sentient
-            </p>
-            <p className="font-serif text-3xl text-text-primary">
-              The quick brown fox jumps over the lazy dog
-            </p>
-          </div>
-
-          <div className="rounded-xl border border-border-quaternary bg-bg-quaternary p-6">
-            <p className="mb-1 font-mono text-xs text-text-quaternary">
-              font-sans · Inter
-            </p>
-            <p className="font-sans text-3xl text-text-primary">
-              The quick brown fox jumps over the lazy dog
-            </p>
-          </div>
-
-          <div className="rounded-xl border border-border-quaternary bg-bg-quaternary p-6">
-            <p className="mb-1 font-mono text-xs text-text-quaternary">
-              font-mono · JetBrains Mono
-            </p>
-            <p className="font-mono text-3xl text-text-primary">
-              The quick brown fox jumps over the lazy dog
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Font Weights */}
-      <section className="space-y-6">
-        <h2 className="font-serif text-2xl font-semibold text-text-primary">
-          Font Weights
-        </h2>
-        <div className="rounded-xl border border-border-quaternary bg-bg-quaternary divide-y divide-border-quaternary">
-          {fontWeights.map((weight) => (
-            <div key={weight.name} className="flex items-center gap-6 px-6 py-4">
-              <span className="w-20 font-mono text-xs text-text-quaternary">
-                {weight.value}
-              </span>
-              <span className="w-20 text-sm text-text-tertiary">
-                {weight.name}
-              </span>
-              <span
-                className="flex-1 text-xl text-text-primary"
-                style={{
-                  fontWeight: weight.value,
-                  fontStyle: weight.style || "normal",
-                }}
-              >
-                Options Strategy Designer
-              </span>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Type Scale */}
-      <section className="space-y-6">
-        <h2 className="font-serif text-2xl font-semibold text-text-primary">
-          Type Scale
-        </h2>
-        <div className="space-y-4">
-          {fontSizes.map((item) => (
+      {/* Main Content */}
+      <div className="flex flex-col gap-14 p-10">
+        {/* Headings Section */}
+        <section className="flex flex-col gap-7">
+          <p className="text-xs font-medium text-fg-quaternary">Headings</p>
+          {headings.map((h) => (
             <div
-              key={item.name}
-              className="flex items-baseline gap-4 border-b border-border-quaternary pb-3"
+              key={h.level}
+              className="flex flex-col gap-2 border-b border-border-quaternary pb-6"
             >
-              <span className="w-24 shrink-0 font-mono text-xs text-text-quaternary">
-                {item.name}
-              </span>
-              <span className="w-16 shrink-0 font-mono text-xs text-text-tertiary">
-                {item.size}
-              </span>
-              <span
-                className="text-text-primary"
+              <p
+                className="font-serif text-fg-primary"
                 style={{
-                  fontSize: item.size,
-                  lineHeight: item.lineHeight,
+                  fontSize: h.size,
+                  lineHeight: h.lineHeight,
+                  letterSpacing: h.tracking,
+                  fontWeight: 400,
                 }}
               >
-                Doris
-              </span>
+                See what&apos;s possible.
+              </p>
+              <p className="font-mono text-[11px] leading-[16.5px] text-fg-quaternary">
+                {h.level} · {h.size} · {h.lineHeight} · -0.5% · Regular
+              </p>
             </div>
           ))}
-        </div>
-      </section>
+        </section>
+
+        {/* Body Section */}
+        <section className="flex flex-col gap-7">
+          <p className="text-xs font-medium text-fg-quaternary">Body</p>
+          {bodySizes.map((b) => (
+            <WeightRow
+              key={b.name}
+              name={b.name}
+              size={b.size}
+              lineHeight={b.lineHeight}
+              fontClass="font-sans"
+            />
+          ))}
+        </section>
+
+        {/* Captions Section */}
+        <section className="flex flex-col gap-7">
+          <p className="text-xs font-medium text-fg-quaternary">Captions</p>
+          <p className="-mt-4 text-xs text-fg-quaternary">
+            Used for numbers and small labels — prices, specs, metadata,
+            timestamps.
+          </p>
+          {captionSizes.map((c) => (
+            <WeightRow
+              key={c.name}
+              name={c.name}
+              size={c.size}
+              lineHeight={c.lineHeight}
+              fontClass="font-mono"
+            />
+          ))}
+        </section>
+      </div>
+
+      {/* Footer */}
+      <div className="flex items-center bg-bg-secondary p-10">
+        <span className="font-mono text-xs font-medium uppercase tracking-widest text-fg-quaternary">
+          Doris
+        </span>
+      </div>
     </div>
   );
 }
