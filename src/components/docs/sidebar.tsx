@@ -9,7 +9,6 @@ const navigation = [
     title: "Getting Started",
     items: [
       { title: "Introduction", href: "/docs/introduction" },
-      { title: "Design Principles", href: "/docs/design-principles" },
     ],
   },
   {
