@@ -24,11 +24,11 @@ export default function RadiusPage() {
         body="Border radius tokens for consistent corner rounding."
       />
       <PageContent>
-      <div className="flex max-w-[730px] flex-wrap gap-7">
+      <div className="grid max-w-[730px] grid-cols-4 gap-7">
         {radiusScale.map((item) => (
           <div
             key={item.name}
-            className="flex flex-col items-center gap-[19px] overflow-clip rounded-2xl bg-bg-tertiary p-9"
+            className="flex aspect-square flex-col items-center justify-center gap-[19px] overflow-clip rounded-2xl bg-bg-tertiary p-6"
           >
             <div
               className="h-14 w-14 bg-bg-quaternary"
