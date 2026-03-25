@@ -1,4 +1,5 @@
 import { PageHeader } from "@/components/docs/page-header";
+import { PageContent } from "@/components/docs/page-content";
 import {
   DorisCard,
   DorisCardHeader,
@@ -10,13 +11,13 @@ import { StatusBadge } from "@/components/ui/status-badge";
 
 export default function CardsPage() {
   return (
-    <div className="space-y-12">
+    <>
       <PageHeader
         section="Components"
         title="Cards"
         body="Container component for grouping related content."
       />
-
+      <PageContent>
       {/* Basic */}
       <section className="space-y-6">
         <h2 className="font-serif text-2xl font-semibold text-text-primary">
@@ -96,6 +97,7 @@ export default function CardsPage() {
           </div>
         </div>
       </section>
-    </div>
+      </PageContent>
+    </>
   );
 }

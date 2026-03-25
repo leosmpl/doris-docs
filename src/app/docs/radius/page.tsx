@@ -13,16 +13,17 @@ const radiusScale = [
 ];
 
 import { PageHeader } from "@/components/docs/page-header";
+import { PageContent } from "@/components/docs/page-content";
 
 export default function RadiusPage() {
   return (
-    <div className="space-y-8">
+    <>
       <PageHeader
         section="Layout"
         title="Radius"
         body="Border radius tokens for consistent corner rounding."
       />
-
+      <PageContent>
       <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4">
         {radiusScale.map((item) => (
           <div key={item.name} className="flex flex-col items-center gap-3">
@@ -39,6 +40,7 @@ export default function RadiusPage() {
           </div>
         ))}
       </div>
-    </div>
+      </PageContent>
+    </>
   );
 }

@@ -1,15 +1,16 @@
 import { PageHeader } from "@/components/docs/page-header";
+import { PageContent } from "@/components/docs/page-content";
 import { DorisButton } from "@/components/ui/doris-button";
 
 export default function ButtonsPage() {
   return (
-    <div className="space-y-12">
+    <>
       <PageHeader
         section="Components"
         title="Buttons"
         body="Primary action triggers with variant and size options."
       />
-
+      <PageContent>
       {/* Variants */}
       <section className="space-y-6">
         <h2 className="font-serif text-2xl font-semibold text-text-primary">
@@ -89,6 +90,7 @@ export default function ButtonsPage() {
           </div>
         </div>
       </section>
-    </div>
+      </PageContent>
+    </>
   );
 }

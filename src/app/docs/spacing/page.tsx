@@ -24,16 +24,17 @@ const spacingScale = [
 ];
 
 import { PageHeader } from "@/components/docs/page-header";
+import { PageContent } from "@/components/docs/page-content";
 
 export default function SpacingPage() {
   return (
-    <div className="space-y-8">
+    <>
       <PageHeader
         section="Layout"
         title="Spacing"
         body="A consistent spacing scale used for padding, margins, and gaps."
       />
-
+      <PageContent>
       <div className="space-y-2">
         {spacingScale.map((item) => (
           <div key={item.name} className="flex items-center gap-4 py-1">
@@ -52,6 +53,7 @@ export default function SpacingPage() {
           </div>
         ))}
       </div>
-    </div>
+      </PageContent>
+    </>
   );
 }

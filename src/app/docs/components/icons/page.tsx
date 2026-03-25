@@ -1,4 +1,5 @@
 import { PageHeader } from "@/components/docs/page-header";
+import { PageContent } from "@/components/docs/page-content";
 import {
   TrendingUp,
   TrendingDown,
@@ -93,13 +94,13 @@ const allIcons: { icon: LucideIcon; name: string }[] = [
 
 export default function IconsPage() {
   return (
-    <div className="space-y-12">
+    <>
       <PageHeader
         section="Components"
         title="Icons"
         body="Lucide React icons styled with Doris color tokens."
       />
-
+      <PageContent>
       {/* Featured Trading Set */}
       <section className="space-y-6">
         <h2 className="font-serif text-2xl font-semibold text-text-primary">
@@ -177,6 +178,7 @@ export default function IconsPage() {
           </div>
         </div>
       </section>
-    </div>
+      </PageContent>
+    </>
   );
 }

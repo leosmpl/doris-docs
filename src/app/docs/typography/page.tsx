@@ -79,18 +79,18 @@ function WeightRow({
 }
 
 import { PageHeader } from "@/components/docs/page-header";
+import { PageContent } from "@/components/docs/page-content";
 
 export default function TypographyPage() {
   return (
-    <div className="-mx-8 -mt-12">
+    <>
       <PageHeader
         section="Theming"
         title="Typography"
         body="Typography tokens and styles for visually appealing designs, ensuring consistency across platforms with defined font sizes and weights."
       />
-
-      {/* Main Content */}
-      <div className="flex flex-col gap-14 px-8 py-10">
+      <PageContent>
+      <div className="flex flex-col gap-14">
         {/* Headings Section */}
         <section className="flex flex-col gap-7">
           <p className="text-xs font-medium text-fg-quaternary">Headings</p>
@@ -149,7 +149,7 @@ export default function TypographyPage() {
           ))}
         </section>
       </div>
-
-    </div>
+      </PageContent>
+    </>
   );
 }

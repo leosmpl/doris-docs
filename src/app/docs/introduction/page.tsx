@@ -1,14 +1,15 @@
 import { PageHeader } from "@/components/docs/page-header";
+import { PageContent } from "@/components/docs/page-content";
 
 export default function IntroductionPage() {
   return (
-    <div className="space-y-8">
+    <>
       <PageHeader
         section="Getting Started"
         title="Introduction"
         body="The design system behind Doris — a visual-first platform for options strategy design."
       />
-
+      <PageContent>
       <section className="space-y-4">
         <h2 className="font-serif text-2xl font-semibold text-text-primary">
           Mission
@@ -70,6 +71,7 @@ export default function IntroductionPage() {
           </li>
         </ul>
       </section>
-    </div>
+      </PageContent>
+    </>
   );
 }

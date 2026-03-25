@@ -1,4 +1,5 @@
 import { PageHeader } from "@/components/docs/page-header";
+import { PageContent } from "@/components/docs/page-content";
 
 export default function DesignPrinciplesPage() {
   const principles = [
@@ -30,13 +31,13 @@ export default function DesignPrinciplesPage() {
   ];
 
   return (
-    <div className="space-y-8">
+    <>
       <PageHeader
         section="Getting Started"
         title="Design Principles"
         body="The guiding values behind every design decision in Doris."
       />
-
+      <PageContent>
       <div className="space-y-8">
         {principles.map((principle, i) => (
           <section key={i} className="space-y-2">
@@ -49,6 +50,7 @@ export default function DesignPrinciplesPage() {
           </section>
         ))}
       </div>
-    </div>
+      </PageContent>
+    </>
   );
 }

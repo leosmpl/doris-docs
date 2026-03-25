@@ -6,7 +6,7 @@ interface PageHeaderProps {
 
 export function PageHeader({ section, title, body }: PageHeaderProps) {
   return (
-    <div className="-mx-8 -mt-12 mb-12 overflow-clip bg-bg-tertiary py-24">
+    <div className="w-full overflow-clip bg-bg-tertiary py-24">
       <div className="mx-auto max-w-[1220px] px-8">
         <div className="flex max-w-[576px] flex-col gap-6">
           <p className="font-mono text-sm leading-5 text-text-tertiary opacity-70">
