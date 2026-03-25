@@ -24,19 +24,24 @@ export default function RadiusPage() {
         body="Border radius tokens for consistent corner rounding."
       />
       <PageContent>
-      <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4">
+      <div className="flex max-w-[730px] flex-wrap gap-7">
         {radiusScale.map((item) => (
-          <div key={item.name} className="flex flex-col items-center gap-3">
+          <div
+            key={item.name}
+            className="flex flex-col items-center gap-[19px] overflow-clip rounded-2xl bg-bg-tertiary p-9"
+          >
             <div
-              className="h-20 w-20 border-2 border-border-primary bg-bg-tertiary"
+              className="h-14 w-14 bg-bg-quaternary"
               style={{ borderRadius: item.value }}
             />
-            <span className="text-sm font-medium text-text-primary">
-              {item.name}
-            </span>
-            <span className="font-mono text-xs text-text-tertiary">
-              {item.value}
-            </span>
+            <div className="flex flex-col items-center">
+              <span className="text-base font-medium text-text-primary">
+                {item.name}
+              </span>
+              <span className="font-mono text-[11px] leading-[16.5px] text-text-tertiary">
+                {item.value}
+              </span>
+            </div>
           </div>
         ))}
       </div>
